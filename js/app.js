@@ -12,7 +12,7 @@ var daysOpen = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
 // 1st and pike
 var storeLocationOne = {
-  cookies: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
+  cookies: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
   render: function(){ 
 
     var ulEl = document.getElementById('pike');
@@ -21,7 +21,7 @@ var storeLocationOne = {
       // create list of items
       var liEl = document.createElement('li');
       // give it content
-      liEl.textContent = businessHours[i] + ': ' + this.cookies[i] + ' cookies sold.';
+      liEl.textContent = businessHours[i] + ':  ' + this.cookies[i] + ' cookies sold.';
       // append list to ul
       ulEl.appendChild(liEl);
     }
@@ -29,3 +29,66 @@ var storeLocationOne = {
 };
 storeLocationOne.render();
 
+// Seatac Airport
+var storeLocationTwo = {
+  cookies: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+  render: function(){ 
+
+    var ulEl = document.getElementById('seatac');
+
+    for(var i = 0; i < this.cookies.length; i++){
+      var liEl = document.createElement('li');
+      liEl.textContent = businessHours[i] + ':  ' + this.cookies[i] + ' cookies sold.';
+      ulEl.appendChild(liEl);
+    }
+  }
+};
+storeLocationTwo.render();
+
+// Seattle Center
+var storeLocationThree = {
+  cookies: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+  render: function(){
+
+    var ulEl = document.getElementById('seacenter');
+
+    for(var i = 0; i < this.cookies.length; i++){
+      var liEl = document.createElement('li');
+      liEl.textContent = businessHours[i] + ':  ' + this.cookies[i] + ' cookies sold.';
+      ulEl.appendChild(liEl);
+    }
+  }
+};
+storeLocationThree.render();
+
+// Capitol Hill
+var storeLocationFour = {
+  cookies: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+  render: function(){
+
+    var ulEl = document.getElementById('capitol');
+
+    for(var i = 0; i < this.cookies.length; i++){
+      var liEl = document.createElement('li');
+      liEl.textContent = businessHours[i] + ':  ' + this.cookies[i] + ' cookies sold.';
+      ulEl.appendChild(liEl);
+    }
+  }
+};
+storeLocationFour.render();
+
+// Alki
+var storeLocationFive = {
+  cookies: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+  render: function(){
+
+    var ulEl = document.getElementById('alki');
+
+    for(var i = 0; i < this.cookies.length; i++){
+      var liEl = document.createElement('li');
+      liEl.textContent = businessHours[i] + ':  ' + this.cookies[i] + ' cookies sold.';
+      ulEl.appendChild(liEl);
+    }
+  }
+};
+storeLocationFive.render();
