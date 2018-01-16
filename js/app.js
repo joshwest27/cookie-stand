@@ -29,7 +29,7 @@ var storeLocationOne = {
 
   // render function
   render: function(){ 
-
+   
     var ulEl = document.getElementById('pike');
 
     for(var i = 0; i < businessHours.length; i++){
