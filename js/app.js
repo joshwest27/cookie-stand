@@ -135,7 +135,6 @@ var storeLocationFour = {
 };
 storeLocationFour.render();
 
-
 // Alki
 var storeLocationFive = {
 
