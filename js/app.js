@@ -29,6 +29,7 @@ function makeHeaderRow(){
   }
 }
 
+/*****
 // make footer row
 function makeFooterRow(){
   var trEl = document.createElement('tr');
@@ -37,10 +38,10 @@ function makeFooterRow(){
     tfEl.textContent = 'total';
     tfEl.appendChild(trEl);
     storeTable.appendChild(trEl);
-    
+
   }
 }
-
+*****/
 
 // constructor for store objects
 function Store(name, maxCust, minCust, avgSale){
@@ -50,6 +51,15 @@ function Store(name, maxCust, minCust, avgSale){
   this.avgSale = avgSale;
   allStores.push(this);
 }
+
+
+// render all stores function
+function renderAllStores() {
+  for(var i in allStores){
+    allStores[i].render();
+  }
+}
+
 
 // render function
 Store.prototype.render = function () {
@@ -76,6 +86,28 @@ Store.prototype.render = function () {
   storeTable.appendChild(trEl);
 };
 
+
+// add new store function
+function addNewStore(){
+  event.preventDefault();
+  console.log(event.target.name.value);
+  var newName = event.target.name.value;
+  var newMaxCust = event.target.maxCust.value;
+  var newMinCust = event.target.minCust.value;
+  var newAvgSale = event.target.avgSale.value;
+
+  new Store(newName, maxCust, minCust, avgSale);
+
+  storeTable.innerHTML = '';
+  makeHeaderRow();
+  renderAllStores();
+}
+
+
+/****
+storeForm.addEventListener('submit', addNewStore);
+****/
+
 // create store instances
 var pike = new Store('1st and Pike', '65', '23', '6.3');
 var seatac = new Store('SeaTac', '24', '3', '1.2');
@@ -85,11 +117,13 @@ var alki = new Store('Alki', '16', '2', '4.6');
 
 // function call
 makeHeaderRow();
-pike.render();
-seatac.render();
-center.render();
-capitol.render();
-alki.render();
+renderAllStores();
+
+// pike.render();
+// seatac.render();
+// center.render();
+// capitol.render();
+// alki.render();
 //makeFooterRow();
 
 
