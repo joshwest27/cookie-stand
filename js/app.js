@@ -20,6 +20,7 @@ Alki	            16	    2       4.6
 
 */
 
+
 // constructor for store objects
 function Store(name, maxCust, minCust, avgSale){
   this.name = name;
@@ -29,6 +30,28 @@ function Store(name, maxCust, minCust, avgSale){
   allStores.push(this);
 }
 
+// render function
+Store.prototype.render = function () {
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.name;
+  trEl.appendChild(tdEl);
+
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.maxCust;
+  trEl.appendChild(tdEl);
+
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.minCust;
+  trEl.appendChild(tdEl);
+
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.avgSale;
+  trEl.appendChild(tdEl);
+
+  storeTable.appendChild(trEl);
+};
+
 // create store instances
 
 var pike = new Store('1st and Pike', '65', '23', '6.3');
@@ -37,21 +60,52 @@ var center = new Store('Seattle Center', '38', '11', '3.7');
 var capitol = new Store('Capitol Hill', '38', '20', '2.3');
 var alki = new Store('Alki', '16', '2', '4.6');
 
+// make table header
+
+function makeHeaderRow(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'name';
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'maxCust';
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'minCust';
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'avgSale';
+  trEl.appendChild(thEl);
+
+  storeTable.appendChild(trEl);
+}
+
+// function call
+
+makeHeaderRow();
+pike.render();
+seatac.render();
+center.render();
+capitol.render();
+alki.render();
+
+
+
 // generate a random number of customers
 // function randomCustomers(max, min){
 //   var customers = Math.floor(Math.random() * (max - min) + min);
 //   return customers;
 // }
 
-/* <table>
 
-*/
-
-
+/************ 
 // 1st and pike
 var storeLocationOne = {
 
-  // max/min customers per hours 65, 23
+// max/min customers per hours 65, 23
   customersPerHour: function randomCustomers(max, min){
     var customers = Math.floor(Math.random() * (max - min) + min);
     return customers;
@@ -80,6 +134,7 @@ var storeLocationOne = {
   } 
 };
 storeLocationOne.render();
+
 
 // Seatac Airport
 var storeLocationTwo = {
@@ -196,7 +251,7 @@ var storeLocationFive = {
 };
 storeLocationFive.render();
 
-// render function
+**********/
 
 
 // creating table
