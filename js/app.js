@@ -3,11 +3,96 @@
 // array for business hours
 var businessHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
 
-// array for days of the week
-// var daysOpen = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+// array to hold stores
+var allStores = [];
 
-// array for each location
-//var storeLocation = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
+// access table
+var storeTable = document.getElementById('stores');
+
+/*
+
+Location	       Max      Min     avgSale
+1st and Pike	    65	    23      6.3
+SeaTac Airport	  24	    3       1.2
+Seattle Center		38	    11      3.7
+Capitol Hill	  	38	    20      2.3
+Alki	            16	    2       4.6
+
+*/
+
+
+// constructor for store objects
+function Store(name, maxCust, minCust, avgSale){
+  this.name = name;
+  this.maxCust = maxCust;
+  this.minCust = minCust;
+  this.avgSale = avgSale;
+  allStores.push(this);
+}
+
+// render function
+Store.prototype.render = function () {
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.name;
+  trEl.appendChild(tdEl);
+
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.maxCust;
+  trEl.appendChild(tdEl);
+
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.minCust;
+  trEl.appendChild(tdEl);
+
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.avgSale;
+  trEl.appendChild(tdEl);
+
+  storeTable.appendChild(trEl);
+};
+
+// create store instances
+
+var pike = new Store('1st and Pike', '65', '23', '6.3');
+var seatac = new Store('SeaTac', '24', '3', '1.2');
+var center = new Store('Seattle Center', '38', '11', '3.7');
+var capitol = new Store('Capitol Hill', '38', '20', '2.3');
+var alki = new Store('Alki', '16', '2', '4.6');
+
+// make table header
+
+function makeHeaderRow(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'name';
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'maxCust';
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'minCust';
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'avgSale';
+  trEl.appendChild(thEl);
+
+  storeTable.appendChild(trEl);
+}
+
+// function call
+
+makeHeaderRow();
+pike.render();
+seatac.render();
+center.render();
+capitol.render();
+alki.render();
+
+
 
 // generate a random number of customers
 // function randomCustomers(max, min){
@@ -16,10 +101,11 @@ var businessHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', 
 // }
 
 
+/************ 
 // 1st and pike
 var storeLocationOne = {
 
-  // max/min customers per hours 65, 23
+// max/min customers per hours 65, 23
   customersPerHour: function randomCustomers(max, min){
     var customers = Math.floor(Math.random() * (max - min) + min);
     return customers;
@@ -48,6 +134,7 @@ var storeLocationOne = {
   } 
 };
 storeLocationOne.render();
+
 
 // Seatac Airport
 var storeLocationTwo = {
@@ -163,3 +250,76 @@ var storeLocationFive = {
   }
 };
 storeLocationFive.render();
+
+**********/
+
+
+// creating table
+/*
+
+function makeHeaderRow(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = ‘6am’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘7am’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘8am’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘9am’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘10am’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘11am’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘12pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘1pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘2pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘3pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘4pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘5pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘6pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘7pm’;
+  trEl.appendChild(thEl);
+
+  thEl = document.createElement('th');
+  thEl.textContent = ‘8pm’;
+  trEl.appendChild(thEl);
+
+  storeTable.appendChild(trEl);
+}
+
+*/
