@@ -3,7 +3,7 @@
 //global variables
 
 // array for business hours
-var businessHours = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm','Total'];
+var businessHours = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 
 // array to hold stores
 var allStores = [];
@@ -29,6 +29,19 @@ function makeHeaderRow(){
   }
 }
 
+// make footer row
+function makeFooterRow(){
+  var trEl = document.createElement('tr');
+  for(var i = 0; i < businessHours.length; i++){
+    var tfEl = document.createElement('tfoot');
+    tfEl.textContent = 'total';
+    tfEl.appendChild(trEl);
+    storeTable.appendChild(trEl);
+    
+  }
+}
+
+
 // constructor for store objects
 function Store(name, maxCust, minCust, avgSale){
   this.name = name;
@@ -40,6 +53,8 @@ function Store(name, maxCust, minCust, avgSale){
 
 // render function
 Store.prototype.render = function () {
+  var cookieArray = [];
+  var totalCookies = 0;
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = this.name;
@@ -47,8 +62,16 @@ Store.prototype.render = function () {
 
   for(var i = 1; i < businessHours.length - 1; i++){
     tdEl = document.createElement('td');
-    tdEl.textContent = Math.floor(Math.random() * ((this.maxCust - this.minCust) + this.minCust) / this.avgSale);
+    var cookies = Math.floor(Math.random() * ((this.maxCust - this.minCust) + this.minCust) / this.avgSale);
+    tdEl.textContent = cookies;
+    totalCookies += cookies;
+    cookieArray.push(cookies);
     trEl.appendChild(tdEl);
+    if(cookieArray.length === 15){
+      tdEl = document.createElement('td');
+      tdEl.textContent = totalCookies;
+      trEl.appendChild(tdEl);
+    }
   }
   storeTable.appendChild(trEl);
 };
@@ -67,5 +90,7 @@ seatac.render();
 center.render();
 capitol.render();
 alki.render();
+//makeFooterRow();
+
 
 
