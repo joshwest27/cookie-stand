@@ -29,19 +29,8 @@ function makeHeaderRow(){
   }
 }
 
-/*****
-// make footer row
-function makeFooterRow(){
-  var trEl = document.createElement('tr');
-  for(var i = 0; i < businessHours.length; i++){
-    var tfEl = document.createElement('tfoot');
-    tfEl.textContent = 'total';
-    tfEl.appendChild(trEl);
-    storeTable.appendChild(trEl);
 
-  }
-}
-*****/
+// make footer row
 
 // constructor for store objects
 function Store(name, maxCust, minCust, avgSale){
@@ -71,6 +60,7 @@ Store.prototype.render = function () {
   trEl.appendChild(tdEl);
 
   for(var i = 1; i < businessHours.length - 1; i++){
+
     tdEl = document.createElement('td');
     var cookies = Math.floor(Math.random() * ((this.maxCust - this.minCust) + this.minCust) / this.avgSale);
     tdEl.textContent = cookies;
@@ -122,7 +112,7 @@ renderAllStores();
 // center.render();
 // capitol.render();
 // alki.render();
-//makeFooterRow();
+
 
 
 
