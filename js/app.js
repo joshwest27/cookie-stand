@@ -96,17 +96,15 @@ function addNewStore(){
   var newMinCust = event.target.minCust.value;
   var newAvgSale = event.target.avgSale.value;
 
-  new Store(newName, maxCust, minCust, avgSale);
+  new Store(newName, newMaxCust, newMinCust, newAvgSale);
 
   storeTable.innerHTML = '';
   makeHeaderRow();
   renderAllStores();
 }
 
-
-/****
+var storeForm = document.getElementById('store-form');
 storeForm.addEventListener('submit', addNewStore);
-****/
 
 // create store instances
 var pike = new Store('1st and Pike', '65', '23', '6.3');
