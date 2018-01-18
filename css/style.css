@@ -70,6 +70,10 @@ form {
   margin-top: 25px;
 }
 
-.map{
+.map {
   margin-top: 25px;
+}
+
+td {
+  background-color: azure;
 }
