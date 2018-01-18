@@ -1,26 +1,75 @@
+.header {
+    background-color: #FF7C90;
+    text-align: center;
+    padding: 20px;
+    
+}
+.top-nav {
+    overflow: hidden;
+    background-color: #FF7C90;
+}
+
+.top-nav a {
+    display: inline;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.top-nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 body {
   font-family: 'PT Sans', sans-serif;
-  background-color: salmon;
-  
+  background-color: #FFCAD4;
+  margin: 10px;
+  padding: 10px;
 }
-img {
+
+table {
+  border: solid 2px black;
+  float: left;
+  margin-right: 5px;
+  width: 75%;
+}
+
+h3{
   text-align: center;
-
 }
 
-h1 {
-  text-align: left;
+#button {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
 }
 
 .nav-main li {
     display: inline;
     margin: 15px;
     padding: 15px;
-    text-align: center;
-  
+    text-align: center; 
 }
 
 .locations li {
     font-family: Georgia;
     font-size: 20px;
+}
+
+.menu {
+  float: left;
+  width: 30%;
+  border: solid 1px black;
+  margin-right: 5px;
+  padding-bottom: 110px;
+  margin-top: 25px;
+}
+
+.map{
+  margin-top: 25px;
 }
