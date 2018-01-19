@@ -77,6 +77,14 @@ form {
   margin-top: 25px;
 }
 
+#mission{
+  font-size: 45px;
+}
+.mission {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
 td {
   background-color: azure;
 }
