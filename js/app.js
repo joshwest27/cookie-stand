@@ -37,13 +37,10 @@ function makeFooterRow() {
   tfEl.textContent = 'Total';
   trEl.appendChild(tfEl);
 
-  for(var i in businessHours){
-    var hourlyTotal = 0;
-    for(var j in allStores) {
-      hourlyTotal += businessHours[i].allStores[j];
-    }
-    tfEl = document.createElement('th');
-    tfEl.textContent = hourlyTotal;
+  for(var i in cookieArray){
+    
+    tfEl = document.createElement('tfoot');
+    tfEl.textContent = cookieArray[i];
     trEl.appendChild.apply(tfEl);
   }
   storeTable.hourlyTotal(trEl);
@@ -117,6 +114,7 @@ var seatac = new Store('SeaTac', '24', '3', '1.2');
 var center = new Store('Seattle Center', '38', '11', '3.7');
 var capitol = new Store('Capitol Hill', '38', '20', '2.3');
 var alki = new Store('Alki', '16', '2', '4.6');
+var total = new Store('Total', '80', '50', '10');
 
 // function call
 makeHeaderRow();

@@ -84,6 +84,10 @@ form {
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
 }
+#contact {
+  font-size: 30px;
+  margin: 10px;
+}
 
 td {
   background-color: azure;
