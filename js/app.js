@@ -30,21 +30,21 @@ function makeHeaderRow(){
   }
 }
 
-// make footer row
-function makeFooterRow() {
-  var trEl = document.createElement('tr');
-  var tfEl = document.createElement('tfoot');
-  tfEl.textContent = 'Total';
-  trEl.appendChild(tfEl);
+// // make footer row
+// function makeFooterRow() {
+//   var trEl = document.createElement('tr');
+//   var tfEl = document.createElement('tfoot');
+//   tfEl.textContent = 'Total';
+//   trEl.appendChild(tfEl);
 
-  for(var i in cookieArray){
+//   for(var i in cookieArray){
     
-    tfEl = document.createElement('tfoot');
-    tfEl.textContent = cookieArray[i];
-    trEl.appendChild.apply(tfEl);
-  }
-  storeTable.hourlyTotal(trEl);
-}
+//     tfEl = document.createElement('tfoot');
+//     tfEl.textContent = cookieArray[i];
+//     trEl.appendChild.apply(tfEl);
+//   }
+//   storeTable.hourlyTotal(trEl);
+// }
 
 // constructor for store objects
 function Store(name, maxCust, minCust, avgSale){
@@ -119,7 +119,7 @@ var total = new Store('Total', '80', '50', '10');
 // function call
 makeHeaderRow();
 renderAllStores();
-makeFooterRow();
+// makeFooterRow();
 
 
 // pike.render();
