@@ -31,6 +31,23 @@ function makeHeaderRow(){
 }
 
 // make footer row
+function makeFooterRow() {
+  var trEl = document.createElement('tr');
+  var tfEl = document.createElement('tfoot');
+  tfEl.textContent = 'Total';
+  trEl.appendChild(tfEl);
+
+  for(var i in businessHours){
+    var hourlyTotal = 0;
+    for(var j in allStores) {
+      hourlyTotal += businessHours[i].allStores[j];
+    }
+    tfEl = document.createElement('th');
+    tfEl.textContent = hourlyTotal;
+    trEl.appendChild.apply(tfEl);
+  }
+  storeTable.hourlyTotal(trEl);
+}
 
 // constructor for store objects
 function Store(name, maxCust, minCust, avgSale){
@@ -104,6 +121,7 @@ var alki = new Store('Alki', '16', '2', '4.6');
 // function call
 makeHeaderRow();
 renderAllStores();
+makeFooterRow();
 
 
 // pike.render();
