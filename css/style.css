@@ -47,9 +47,8 @@ h3{
 }
 
 form {
-  text-align: center;
-  width: 50%;
-  margin-left: 25%;
+  width: 80%;
+  float: right;
 }
 
 .nav-main li {
@@ -75,6 +74,7 @@ form {
 
 .map {
   margin-top: 25px;
+
 }
 
 #mission{
