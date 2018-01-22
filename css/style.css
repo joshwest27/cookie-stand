@@ -33,9 +33,9 @@ body {
 
 table {
   border: solid 2px black;
-  float: left;
   margin-right: 5px;
-  width: 75%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 h3{
