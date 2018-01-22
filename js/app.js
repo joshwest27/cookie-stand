@@ -1,7 +1,7 @@
 'use strict';
 
 // array for business hours
-var businessHours = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var businessHours = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 // global variables
 var storeTable = document.getElementById('stores');
@@ -50,7 +50,7 @@ CookieStore.prototype.calcCustomersEveryHour = function(){
 CookieStore.prototype.calcCookiesPerHour = function(){
   this.calcCustomersEveryHour();
   for(var i in businessHours){
-    var perHour = Math.floor(this.customersEveryHour[i] * this.avgCookieHour);
+    var perHour = Math.floor(this.customersEveryHour[i] / this.avgCookieHour);
     this.cookiesPerHour.push(perHour);
     this.totalDayCookies += perHour;
   }
